@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyntiq — AI Automation for SMBs</title>
+    <meta name="description" content="Flyntiq builds AI-powered automations for sales, marketing, and internal ops — so your team stops wasting hours on manual tasks and starts focusing on what actually grows the business.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Flyntiq — AI Automation for SMBs">
+    <meta property="og:description" content="We spark the automation. You own the results. Custom AI solutions for healthcare, SaaS, fintech, and B2B professional services.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flyntiq.com">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --navy: #1B2D4F;
+            --amber: #F0A020;
+            --amber-hover: #EF9F27;
+            --white: #FFFFFF;
+            --off-white: #F5F0E8;
+            --stone: #5F5E5A;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Base & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--off-white);
+            color: var(--stone);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .logo-text {
+            font-family: 'Sora', sans-serif;
+            color: var(--navy);
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            font-size: 1.05rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* Scroll Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-align: center;
+        }
+
+        .btn-amber {
+            background-color: var(--amber);
+            color: var(--navy);
+            animation: pulse 3s infinite;
+        }
+
+        .btn-amber:hover {
+            background-color: var(--amber-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(240, 160, 32, 0.3);
+            animation: none; /* Stop pulse on hover for better feel */
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .btn-navy {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-navy:hover {
+            background-color: #12203b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(27, 45, 79, 0.3);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(240, 160, 32, 0.5); }
+            70% { box-shadow: 0 0 0 12px rgba(240, 160, 32, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(240, 160, 32, 0); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 24px 0;
+        }
+
+        nav.scrolled {
+            background: rgba(27, 45, 79, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 16px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        .logo-text.dark-mode {
+            color: var(--navy);
+        }
+
+        .logo-text span {
+            color: var(--amber);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a.link {
+            color: var(--white);
+            font-weight: 500;
+            transition: var(--transition);
+            opacity: 0.9;
+        }
+
+        .nav-links a.link:hover {
+            color: var(--amber);
+            opacity: 1;
+        }
+
+        .nav-links .btn-amber {
+            padding: 10px 24px;
+            font-size: 0.9rem;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: var(--white);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        /* Section Headers */
+        .section-label {
+            color: var(--amber);
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 60px;
+            max-width: 800px;
+            line-height: 1.2;
+        }
+
+        /* Background Pattern Utility */
+        .bg-circuit {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h20v20h20' stroke='%23F0A020' stroke-width='1' fill='none' opacity='0.1'/%3E%3Ccircle cx='10' cy='10' r='2' fill='%23F0A020' opacity='0.2'/%3E%3Ccircle cx='50' cy='30' r='2' fill='%23F0A020' opacity='0.2'/%3E%3Cpath d='M80 80v-20h-20' stroke='%23F0A020' stroke-width='1' fill='none' opacity='0.1'/%3E%3Ccircle cx='80' cy='80' r='2' fill='%23F0A020' opacity='0.2'/%3E%3Ccircle cx='60' cy='60' r='2' fill='%23F0A020' opacity='0.2'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+        }
+
+        /* 2. Hero Section */
+        #hero {
+            background-color: var(--navy);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px; /* Offset for nav */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: rgba(240, 160, 32, 0.1);
+            border: 1px solid rgba(240, 160, 32, 0.3);
+            color: var(--amber);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+        }
+
+        #hero h1 {
+            color: var(--white);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        #hero p.sub-headline {
+            color: #A0AABF;
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            margin-bottom: 40px;
+            max-width: 750px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .social-proof {
+            color: #A0AABF;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .social-proof::before {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 1px;
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* 3. Problem Section */
+        #problem {
+            background-color: var(--off-white);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .problem-card {
+            background-color: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(27, 45, 79, 0.08);
+            border-color: rgba(240, 160, 32, 0.3);
+        }
+
+        .problem-icon {
+            background-color: rgba(240, 160, 32, 0.1);
+            color: var(--amber);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+        }
+
+        .problem-card p {
+            color: var(--navy);
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.5;
+            padding-top: 10px;
+        }
+
+        .problem-bottom {
+            text-align: center;
+            font-size: 1.25rem;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            color: var(--navy);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 4. Services Section */
+        #services {
+            background-color: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background-color: var(--off-white);
+            border: 1px solid var(--navy);
+            border-radius: 16px;
+            padding: 40px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--amber);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(27, 45, 79, 0.1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-card h3::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: var(--amber);
+            border-radius: 50%;
+        }
+
+        .service-card p {
+            margin-bottom: 24px;
+        }
+
+        .service-examples {
+            border-top: 1px solid rgba(27, 45, 79, 0.1);
+            padding-top: 24px;
+        }
+
+        .service-examples strong {
+            display: block;
+            color: var(--navy);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .service-examples ul {
+            list-style: none;
+        }
+
+        .service-examples li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .service-examples li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--amber);
+            font-weight: bold;
+        }
+
+        /* 5. How It Works */
+        #how-it-works {
+            background-color: var(--off-white);
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            gap: 40px;
+        }
+
+        .steps-line {
+            position: absolute;
+            top: 32px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: dashed 2px rgba(27, 45, 79, 0.15);
+            z-index: 1;
+        }
+
+        .step {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background-color: var(--navy);
+            color: var(--amber);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            border: 6px solid var(--off-white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .step h3 {
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+        }
+
+        /* 5.5 Case Studies */
+        #case-studies {
+            background-color: var(--white);
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .case-card {
+            background-color: var(--off-white);
+            border: 1px solid rgba(27, 45, 79, 0.05);
+            border-radius: 16px;
+            padding: 40px;
+            transition: var(--transition);
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(27, 45, 79, 0.08);
+            border-color: rgba(240, 160, 32, 0.3);
+        }
+
+        .case-client {
+            font-family: 'Sora', sans-serif;
+            color: var(--amber);
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: rgba(240, 160, 32, 0.1);
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+
+        .case-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .case-card p {
+            font-size: 0.95rem;
+            color: var(--stone);
+            margin-bottom: 0;
+        }
+
+        /* 6. Who We Help */
+        #who-we-help {
+            background-color: var(--navy);
+            color: var(--white);
+            position: relative;
+        }
+
+        #who-we-help .section-header h2 {
+            color: var(--white);
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .help-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(240, 160, 32, 0.2);
+            padding: 32px;
+            border-radius: 16px;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .help-card:hover {
+            border-color: var(--amber);
+            background-color: rgba(255, 255, 255, 0.06);
+            transform: translateY(-5px);
+        }
+
+        .help-card h3 {
+            color: var(--amber);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .help-card p {
+            color: #A0AABF;
+            font-size: 0.95rem;
+        }
+
+        .best-fit {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 24px;
+            border-radius: 12px;
+            font-weight: 500;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 7. Why Flyntiq */
+        #why {
+            background-color: var(--white);
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .diff-point {
+            padding-left: 24px;
+            border-left: 3px solid var(--amber);
+        }
+
+        .diff-point h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+        }
+
+        /* 8. CTA Section */
+        #cta {
+            background-color: var(--amber);
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle glowing orb in background */
+        #cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        #cta h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--navy);
+            margin-bottom: 24px;
+        }
+
+        #cta p {
+            color: rgba(27, 45, 79, 0.85);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        .cta-btn-wrapper {
+            margin-bottom: 24px;
+        }
+
+        .cta-footer-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: rgba(27, 45, 79, 0.7);
+        }
+
+        /* 9. Footer */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: #A0AABF;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--amber);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #A0AABF;
+            font-size: 0.9rem;
+        }
+
+        .footer-tagline {
+            color: rgba(240, 160, 32, 0.6);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Sora', sans-serif;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .steps-line { display: none; }
+            .steps-container {
+                flex-direction: column;
+                gap: 48px;
+            }
+            .step-number {
+                margin: 0 auto 24px;
+            }
+            .step {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 70px 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--navy);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.4s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a.link {
+                font-size: 1.25rem;
+            }
+
+            /* Hamburger animation */
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. NAVIGATION -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo-text">FLYNT<span>IQ</span></a>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="#services" class="link">Services</a>
+                <a href="#how-it-works" class="link">How it works</a>
+                <a href="#case-studies" class="link">Case studies</a>
+                <a href="#who-we-help" class="link">Who we help</a>
+                <a href="#cta" class="link">Contact</a>
+                <a href="https://calendly.com/vadym-flyntiq/30min" target="_blank" class="btn btn-amber">Book a free audit</a>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <section id="hero" class="bg-circuit fade-in">
+        <div class="container hero-content">
+            <div class="badge">AI Automation for SMBs</div>
+            <h1>Your business runs 24/7. Shouldn't your operations too?</h1>
+            <p class="sub-headline">Flyntiq builds AI-powered automations for sales, marketing, and internal ops — so your team stops wasting hours on manual tasks and starts focusing on what actually grows the business.</p>
+            
+            <div class="hero-btns">
+                <a href="https://calendly.com/vadym-flyntiq/30min" target="_blank" class="btn btn-amber">Book a free audit →</a>
+                <a href="#services" class="btn btn-outline">See what we automate</a>
+            </div>
+            
+            <div class="social-proof">
+                Helping SMBs in healthcare, SaaS, fintech & B2B save hundreds of hours every month
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PROBLEM SECTION -->
+    <section id="problem" class="fade-in">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Sound familiar?</span>
+                <h2>Your team is talented. So why are they spending hours on this?</h2>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">📋</div>
+                    <p>Copy-pasting data between tools every single day</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">✉️</div>
+                    <p>Sending follow-up emails manually, hours after a demo</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <p>Building the same report from scratch every Monday morning</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <p>Chasing invoices and updating spreadsheets by hand</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⌛</div>
+                    <p>Losing leads because no one followed up in time</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🤝</div>
+                    <p>Onboarding new clients with the same manual steps every time</p>
+                </div>
+            </div>
+
+            <p class="problem-bottom">These aren't people problems. They're automation problems. And we fix them.</p>
+        </div>
+    </section>
+
+    <!-- 4. SERVICES SECTION -->
+    <section id="services" class="fade-in">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What we automate</span>
+                <h2>From sales to ops — if it's repetitive, we can automate it</h2>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <h3>Sales automation</h3>
+                    <p>Lead capture → CRM → follow-up sequences → pipeline reporting. Your sales process runs itself while your team closes deals.</p>
+                    <div class="service-examples">
+                        <strong>Examples</strong>
+                        <ul>
+                            <li>Lead form → CRM sync</li>
+                            <li>Automated follow-ups</li>
+                            <li>Deal stage notifications</li>
+                            <li>Pipeline reports</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <h3>Marketing automation</h3>
+                    <p>Campaign triggers, lead scoring, content workflows, email sequences. Your marketing engine never sleeps.</p>
+                    <div class="service-examples">
+                        <strong>Examples</strong>
+                        <ul>
+                            <li>Lead scoring</li>
+                            <li>Email drip campaigns</li>
+                            <li>Social scheduling triggers</li>
+                            <li>Campaign performance reports</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <h3>Internal operations</h3>
+                    <p>Onboarding, invoicing, task routing, reporting. The back-office work your team hates — automated.</p>
+                    <div class="service-examples">
+                        <strong>Examples</strong>
+                        <ul>
+                            <li>Client onboarding flows</li>
+                            <li>Invoice generation</li>
+                            <li>Task assignment</li>
+                            <li>Weekly internal reports</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. HOW IT WORKS SECTION -->
+    <section id="how-it-works" class="fade-in">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <span class="section-label">How it works</span>
+                <h2 style="margin: 0 auto 60px;">From first call to fully automated — in under 3 weeks</h2>
+            </div>
+
+            <div class="steps-container">
+                <div class="steps-line"></div>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>We audit your ops</h3>
+                    <p>A free 30-minute call where we map your manual processes and identify the top 3 automation opportunities — before you spend a single dollar.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We build the spark</h3>
+                    <p>We design, build, and test your automation using Make.com, n8n, and AI tools. You don't write a line of code.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Your business ignites</h3>
+                    <p>Go live in 1–3 weeks. We stay on as your automation partner — maintaining, improving, and expanding as you grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5.5 CASE STUDIES SECTION -->
+    <section id="case-studies" class="fade-in">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Proven Results</span>
+                <h2>Real automations we've built for growing businesses</h2>
+            </div>
+
+            <div class="case-grid">
+                <!-- Case Study 1 -->
+                <div class="case-card">
+                    <div class="case-client">My Real Profit</div>
+                    <h3>HubSpot Deal Automation</h3>
+                    <p>Eliminated manual CRM updates. We built an automation that detects deal stage changes in HubSpot, automatically sends stage-appropriate emails, and updates custom properties instantly based on client requirements.</p>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-card">
+                    <div class="case-client">The Screening Labs</div>
+                    <h3>AI Lead Gen & Content Engine</h3>
+                    <p>Developed a dual-engine AI system for a healthcare/orthopedics client. It features an automated LinkedIn post generator and an AI assistant that takes a voice or text ICP prompt and delivers a hyper-targeted lead list with deep pain-point research.</p>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="case-card">
+                    <div class="case-client">Diversido</div>
+                    <h3>LinkedIn Outreach → CRM Sync</h3>
+                    <p>Streamlined the outbound sales engine by creating a fully automated LinkedIn outreach sequence that natively connects and syncs all lead data and engagement metrics directly into HubSpot without manual entry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. WHO WE HELP SECTION -->
+    <section id="who-we-help" class="bg-circuit fade-in">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Who we work with</span>
+                <h2>Built for businesses that are growing fast and running lean</h2>
+            </div>
+
+            <div class="help-grid">
+                <div class="help-card">
+                    <h3>Healthcare & wellness</h3>
+                    <p>Automate patient intake, appointment reminders, and follow-up workflows</p>
+                </div>
+                <div class="help-card">
+                    <h3>SaaS companies</h3>
+                    <p>Automate onboarding, churn alerts, billing, and customer comms</p>
+                </div>
+                <div class="help-card">
+                    <h3>Fintech & financial services</h3>
+                    <p>Automate compliance tasks, reporting, client onboarding, and alerts</p>
+                </div>
+                <div class="help-card">
+                    <h3>B2B professional services</h3>
+                    <p>Automate proposals, invoicing, CRM updates, and project kickoffs</p>
+                </div>
+            </div>
+
+            <div class="best-fit">
+                Best fit: companies with 5–100 employees ready to stop doing manually what AI can do in seconds
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. WHY FLYNTIQ SECTION -->
+    <section id="why" class="fade-in">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Flyntiq difference</span>
+                <h2>We speak business. Not just code.</h2>
+            </div>
+
+            <div class="diff-grid">
+                <div class="diff-point">
+                    <h3>Business-first approach</h3>
+                    <p>We come from operations and sales, not engineering. We understand your workflow before we touch a tool.</p>
+                </div>
+                <div class="diff-point">
+                    <h3>Fast delivery</h3>
+                    <p>Most clients are live in 1–3 weeks. No 6-month implementation projects.</p>
+                </div>
+                <div class="diff-point">
+                    <h3>We stay with you</h3>
+                    <p>Monthly retainer means we maintain, improve and grow your automations as your business evolves.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CTA SECTION -->
+    <section id="cta" class="fade-in">
+        <div class="container cta-content">
+            <h2>One spark is all it takes.</h2>
+            <p>Book your free 30-minute automation audit. We'll show you exactly what's possible — no pitch, no obligation.</p>
+            
+            <div class="cta-btn-wrapper">
+                <a href="https://calendly.com/vadym-flyntiq/30min" target="_blank" class="btn btn-navy">Book a free audit →</a>
+            </div>
+            
+            <div class="cta-footer-text">
+                flyntiq.com · vadym@flyntiq.com
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <a href="#" class="logo-text">FLYNT<span>IQ</span></a>
+                
+                <div class="footer-links">
+                    <a href="#services">Services</a>
+                    <a href="#how-it-works">How it works</a>
+                    <a href="#case-studies">Case studies</a>
+                    <a href="#who-we-help">Who we help</a>
+                    <a href="#cta">Contact</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">© 2025 Flyntiq. All rights reserved.</div>
+                <div class="footer-tagline">We spark the automation. You own the results.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Sticky Navigation & Scroll logic
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // 2. Mobile Menu Toggle
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            const navItems = document.querySelectorAll('.nav-links a.link');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                
+                // Prevent body scrolling when menu is open
+                if (navLinks.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close menu when clicking a link
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // 3. Smooth Scroll for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Offset for fixed header
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // 4. Scroll-Triggered Fade-In Animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Trigger hero animation immediately
+            setTimeout(() => {
+                document.getElementById('hero').classList.add('visible');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
