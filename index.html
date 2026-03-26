@@ -34,14 +34,14 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS Variables */
+        /* CSS Variables - Updated Palette */
         :root {
-            --navy: #1B2D4F;
-            --amber: #F0A020;
-            --amber-hover: #EF9F27;
+            --navy: #1A1A1A;          /* Flint black */
+            --amber: #BA7517;         /* Spark amber */
+            --amber-hover: #EF9F27;   /* Light spark */
             --white: #FFFFFF;
-            --off-white: #F5F0E8;
-            --stone: #5F5E5A;
+            --off-white: #F5F0E8;     /* Warm white */
+            --stone: #5F5E5A;         /* Stone gray */
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -119,14 +119,15 @@
 
         .btn-amber {
             background-color: var(--amber);
-            color: var(--navy);
+            color: var(--white);
             animation: pulse 3s infinite;
         }
 
         .btn-amber:hover {
             background-color: var(--amber-hover);
+            color: var(--navy);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(240, 160, 32, 0.3);
+            box-shadow: 0 8px 20px rgba(186, 117, 23, 0.3);
             animation: none; /* Stop pulse on hover for better feel */
         }
 
@@ -148,15 +149,15 @@
         }
 
         .btn-navy:hover {
-            background-color: #12203b;
+            background-color: #000000;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(27, 45, 79, 0.3);
+            box-shadow: 0 8px 20px rgba(26, 26, 26, 0.3);
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(240, 160, 32, 0.5); }
-            70% { box-shadow: 0 0 0 12px rgba(240, 160, 32, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(240, 160, 32, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(186, 117, 23, 0.5); }
+            70% { box-shadow: 0 0 0 12px rgba(186, 117, 23, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(186, 117, 23, 0); }
         }
 
         /* Navigation */
@@ -171,7 +172,7 @@
         }
 
         nav.scrolled {
-            background: rgba(27, 45, 79, 0.95);
+            background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             padding: 16px 0;
@@ -184,19 +185,16 @@
             align-items: center;
         }
 
-        .logo-text {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--white);
-            letter-spacing: 0.05em;
+        .brand-logo {
+            height: 48px;
+            width: auto;
+            border-radius: 6px;
+            display: block;
+            transition: var(--transition);
         }
 
-        .logo-text.dark-mode {
-            color: var(--navy);
-        }
-
-        .logo-text span {
-            color: var(--amber);
+        .brand-logo:hover {
+            transform: scale(1.02);
         }
 
         .nav-links {
@@ -259,7 +257,7 @@
 
         /* Background Pattern Utility */
         .bg-circuit {
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h20v20h20' stroke='%23F0A020' stroke-width='1' fill='none' opacity='0.1'/%3E%3Ccircle cx='10' cy='10' r='2' fill='%23F0A020' opacity='0.2'/%3E%3Ccircle cx='50' cy='30' r='2' fill='%23F0A020' opacity='0.2'/%3E%3Cpath d='M80 80v-20h-20' stroke='%23F0A020' stroke-width='1' fill='none' opacity='0.1'/%3E%3Ccircle cx='80' cy='80' r='2' fill='%23F0A020' opacity='0.2'/%3E%3Ccircle cx='60' cy='60' r='2' fill='%23F0A020' opacity='0.2'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h20v20h20' stroke='%23BA7517' stroke-width='1' fill='none' opacity='0.1'/%3E%3Ccircle cx='10' cy='10' r='2' fill='%23BA7517' opacity='0.2'/%3E%3Ccircle cx='50' cy='30' r='2' fill='%23BA7517' opacity='0.2'/%3E%3Cpath d='M80 80v-20h-20' stroke='%23BA7517' stroke-width='1' fill='none' opacity='0.1'/%3E%3Ccircle cx='80' cy='80' r='2' fill='%23BA7517' opacity='0.2'/%3E%3Ccircle cx='60' cy='60' r='2' fill='%23BA7517' opacity='0.2'/%3E%3C/svg%3E");
             background-size: 100px 100px;
         }
 
@@ -283,8 +281,8 @@
         .badge {
             display: inline-block;
             padding: 8px 16px;
-            background-color: rgba(240, 160, 32, 0.1);
-            border: 1px solid rgba(240, 160, 32, 0.3);
+            background-color: rgba(186, 117, 23, 0.1);
+            border: 1px solid rgba(186, 117, 23, 0.3);
             color: var(--amber);
             border-radius: 50px;
             font-size: 0.85rem;
@@ -356,12 +354,12 @@
 
         .problem-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(27, 45, 79, 0.08);
-            border-color: rgba(240, 160, 32, 0.3);
+            box-shadow: 0 15px 30px rgba(26, 26, 26, 0.08);
+            border-color: rgba(186, 117, 23, 0.3);
         }
 
         .problem-icon {
-            background-color: rgba(240, 160, 32, 0.1);
+            background-color: rgba(186, 117, 23, 0.1);
             color: var(--amber);
             width: 48px;
             height: 48px;
@@ -427,7 +425,7 @@
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(27, 45, 79, 0.1);
+            box-shadow: 0 20px 40px rgba(26, 26, 26, 0.1);
         }
 
         .service-card:hover::before {
@@ -456,7 +454,7 @@
         }
 
         .service-examples {
-            border-top: 1px solid rgba(27, 45, 79, 0.1);
+            border-top: 1px solid rgba(26, 26, 26, 0.1);
             padding-top: 24px;
         }
 
@@ -506,7 +504,7 @@
             left: 50px;
             right: 50px;
             height: 2px;
-            background: dashed 2px rgba(27, 45, 79, 0.15);
+            background: dashed 2px rgba(26, 26, 26, 0.15);
             z-index: 1;
         }
 
@@ -540,7 +538,7 @@
 
         /* 5.5 Case Studies */
         #case-studies {
-            background-color: var(--white);
+            background-color: var(--off-white);
         }
 
         .case-grid {
@@ -550,8 +548,8 @@
         }
 
         .case-card {
-            background-color: var(--off-white);
-            border: 1px solid rgba(27, 45, 79, 0.05);
+            background-color: var(--white);
+            border: 1px solid rgba(26, 26, 26, 0.05);
             border-radius: 16px;
             padding: 40px;
             transition: var(--transition);
@@ -559,8 +557,8 @@
 
         .case-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(27, 45, 79, 0.08);
-            border-color: rgba(240, 160, 32, 0.3);
+            box-shadow: 0 20px 40px rgba(26, 26, 26, 0.08);
+            border-color: rgba(186, 117, 23, 0.3);
         }
 
         .case-client {
@@ -572,7 +570,7 @@
             letter-spacing: 0.05em;
             margin-bottom: 12px;
             display: inline-block;
-            background: rgba(240, 160, 32, 0.1);
+            background: rgba(186, 117, 23, 0.1);
             padding: 6px 12px;
             border-radius: 4px;
         }
@@ -611,7 +609,7 @@
 
         .help-card {
             background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(240, 160, 32, 0.2);
+            border: 1px solid rgba(186, 117, 23, 0.2);
             padding: 32px;
             border-radius: 16px;
             transition: var(--transition);
@@ -704,7 +702,7 @@
         }
 
         #cta p {
-            color: rgba(27, 45, 79, 0.85);
+            color: rgba(26, 26, 26, 0.85);
             font-size: 1.25rem;
             font-weight: 500;
             margin-bottom: 40px;
@@ -717,7 +715,7 @@
         .cta-footer-text {
             font-size: 0.95rem;
             font-weight: 600;
-            color: rgba(27, 45, 79, 0.7);
+            color: rgba(26, 26, 26, 0.7);
         }
 
         /* 9. Footer */
@@ -767,7 +765,7 @@
         }
 
         .footer-tagline {
-            color: rgba(240, 160, 32, 0.6);
+            color: rgba(186, 117, 23, 0.6);
             font-weight: 700;
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -863,11 +861,14 @@
     <!-- 1. NAVIGATION -->
     <nav id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo-text">FLYNT<span>IQ</span></a>
+            <a href="#">
+                <img src="flyntiq_logo.jpeg" alt="Flyntiq Logo" class="brand-logo">
+            </a>
             
             <div class="nav-links" id="nav-links">
                 <a href="#services" class="link">Services</a>
                 <a href="#how-it-works" class="link">How it works</a>
+                <a href="#pricing" class="link">Pricing</a>
                 <a href="#case-studies" class="link">Case studies</a>
                 <a href="#who-we-help" class="link">Who we help</a>
                 <a href="#cta" class="link">Contact</a>
@@ -1028,73 +1029,73 @@
         </div>
     </section>
 
-    <!-- ==================== PRICING SECTION ==================== -->
-<section id="pricing" style="padding: 100px 20px; background: #F5F0E8;">
+<!-- ==================== PRICING SECTION ==================== -->
+<section id="pricing" class="fade-in" style="padding: 100px 20px; background: #FFFFFF;">
   <div style="max-width: 1100px; margin: 0 auto;">
-    <p style="text-align: center; font-size: 13px; font-weight: 700; letter-spacing: .1em; color: #F0A020; text-transform: uppercase; margin: 0 0 12px;">Pricing</p>
-    <h2 style="text-align: center; font-size: 42px; font-weight: 700; color: #1B2D4F; margin: 0 0 16px; line-height: 1.2;">Simple, transparent pricing</h2>
+    <p style="text-align: center; font-size: 13px; font-weight: 700; letter-spacing: .1em; color: #BA7517; text-transform: uppercase; margin: 0 0 12px;">Pricing</p>
+    <h2 style="text-align: center; font-size: 42px; font-weight: 700; color: #1A1A1A; margin: 0 0 16px; line-height: 1.2; font-family: 'Sora', sans-serif;">Simple, transparent pricing</h2>
     <p style="text-align: center; font-size: 17px; color: #5F5E5A; margin: 0 auto 60px; max-width: 560px; line-height: 1.7;">No hidden fees. No long-term lock-in. Start with a one-time project and upgrade to a retainer when you're ready.</p>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; align-items: start;">
 
       <!-- Starter -->
-      <div style="background: #ffffff; border: 1px solid #e0d8cc; border-radius: 16px; padding: 36px 32px;">
+      <div style="background: #ffffff; border: 1px solid #e0d8cc; border-radius: 16px; padding: 36px 32px; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(26, 26, 26, 0.03);">
         <p style="font-size: 13px; font-weight: 700; letter-spacing: .08em; color: #5F5E5A; text-transform: uppercase; margin: 0 0 10px;">Starter</p>
         <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;">
-          <span style="font-size: 42px; font-weight: 700; color: #1B2D4F;">$200</span>
+          <span style="font-size: 42px; font-weight: 700; color: #1A1A1A; font-family: 'Sora', sans-serif;">$200</span>
           <span style="font-size: 16px; color: #5F5E5A;">– $500</span>
         </div>
         <p style="font-size: 14px; color: #5F5E5A; margin: 0 0 28px;">One-time project fee</p>
         <div style="border-top: 1px solid #e0d8cc; padding-top: 24px; margin-bottom: 32px;">
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1B2D4F;">1–2 automations built</span></div>
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1B2D4F;">Lead capture, CRM sync, or email flow</span></div>
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1B2D4F;">Delivery in 1–2 weeks</span></div>
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1B2D4F;">Loom walkthrough + handoff doc</span></div>
-          <div style="display: flex; gap: 10px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1B2D4F;">Best for first-time buyers</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">1–2 automations built</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">Lead capture, CRM sync, or email flow</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">Delivery in 1–2 weeks</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">Loom walkthrough + handoff doc</span></div>
+          <div style="display: flex; gap: 10px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">Best for first-time buyers</span></div>
         </div>
-        <a href="https://calendly.com/vadym-flyntiq/30min" style="display: block; text-align: center; background: transparent; border: 2px solid #1B2D4F; color: #1B2D4F; padding: 14px 24px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none;" onmouseover="this.style.background='#1B2D4F';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#1B2D4F'">Get started →</a>
+        <a href="https://calendly.com/vadym-flyntiq/30min" style="display: block; text-align: center; background: transparent; border: 2px solid #1A1A1A; color: #1A1A1A; padding: 14px 24px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; font-family: 'Sora', sans-serif; transition: all 0.3s ease;" onmouseover="this.style.background='#1A1A1A';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#1A1A1A'">Get started →</a>
       </div>
 
       <!-- Growth — featured -->
-      <div style="background: #1B2D4F; border: 2px solid #F0A020; border-radius: 16px; padding: 36px 32px; position: relative;">
-        <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #F0A020; color: #1B2D4F; font-size: 12px; font-weight: 700; padding: 4px 18px; border-radius: 20px; white-space: nowrap; letter-spacing: .05em;">MOST POPULAR</div>
-        <p style="font-size: 13px; font-weight: 700; letter-spacing: .08em; color: #F0A020; text-transform: uppercase; margin: 0 0 10px;">Growth</p>
+      <div style="background: #1A1A1A; border: 2px solid #BA7517; border-radius: 16px; padding: 36px 32px; position: relative; transition: all 0.3s ease; box-shadow: 0 15px 40px rgba(186, 117, 23, 0.15);">
+        <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #BA7517; color: #1A1A1A; font-size: 12px; font-weight: 700; padding: 4px 18px; border-radius: 20px; white-space: nowrap; letter-spacing: .05em;">MOST POPULAR</div>
+        <p style="font-size: 13px; font-weight: 700; letter-spacing: .08em; color: #BA7517; text-transform: uppercase; margin: 0 0 10px;">Growth</p>
         <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;">
-          <span style="font-size: 42px; font-weight: 700; color: #ffffff;">$500</span>
+          <span style="font-size: 42px; font-weight: 700; color: #ffffff; font-family: 'Sora', sans-serif;">$500</span>
           <span style="font-size: 16px; color: #9BA8BB;">– $1,000</span>
         </div>
         <p style="font-size: 14px; color: #9BA8BB; margin: 0 0 4px;">One-time project fee</p>
-        <p style="font-size: 14px; color: #F0A020; font-weight: 600; margin: 0 0 28px;">+ $150–250 / month retainer</p>
+        <p style="font-size: 14px; color: #BA7517; font-weight: 600; margin: 0 0 28px;">+ $150–250 / month retainer</p>
         <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 24px; margin-bottom: 32px;">
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #ffffff;">Full workflow automation (3–5 tools)</span></div>
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #ffffff;">AI integration (chatbot, reports, agents)</span></div>
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #ffffff;">Delivery in 2–4 weeks</span></div>
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #ffffff;">Monthly maintenance + improvements</span></div>
-          <div style="display: flex; gap: 10px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #ffffff;">Best for growing SMBs</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #ffffff;">Full workflow automation (3–5 tools)</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #ffffff;">AI integration (chatbot, reports, agents)</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #ffffff;">Delivery in 2–4 weeks</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #ffffff;">Monthly maintenance + improvements</span></div>
+          <div style="display: flex; gap: 10px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #ffffff;">Best for growing SMBs</span></div>
         </div>
-        <a href="https://calendly.com/vadym-flyntiq/30min" style="display: block; text-align: center; background: #F0A020; border: 2px solid #F0A020; color: #1B2D4F; padding: 14px 24px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none;" onmouseover="this.style.background='#EF9F27'" onmouseout="this.style.background='#F0A020'">Get started →</a>
+        <a href="https://calendly.com/vadym-flyntiq/30min" style="display: block; text-align: center; background: #BA7517; border: 2px solid #BA7517; color: #ffffff; padding: 14px 24px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; font-family: 'Sora', sans-serif; transition: all 0.3s ease;" onmouseover="this.style.background='#EF9F27'; this.style.borderColor='#EF9F27'" onmouseout="this.style.background='#BA7517'; this.style.borderColor='#BA7517'">Get started →</a>
       </div>
 
       <!-- Scale -->
-      <div style="background: #ffffff; border: 1px solid #e0d8cc; border-radius: 16px; padding: 36px 32px;">
+      <div style="background: #ffffff; border: 1px solid #e0d8cc; border-radius: 16px; padding: 36px 32px; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(26, 26, 26, 0.03);">
         <p style="font-size: 13px; font-weight: 700; letter-spacing: .08em; color: #5F5E5A; text-transform: uppercase; margin: 0 0 10px;">Scale</p>
         <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;">
-          <span style="font-size: 42px; font-weight: 700; color: #1B2D4F;">$2,000</span>
+          <span style="font-size: 42px; font-weight: 700; color: #1A1A1A; font-family: 'Sora', sans-serif;">$2,000</span>
           <span style="font-size: 16px; color: #5F5E5A;">– $5,000</span>
         </div>
         <p style="font-size: 14px; color: #5F5E5A; margin: 0 0 4px;">One-time project fee</p>
-        <p style="font-size: 14px; color: #F0A020; font-weight: 600; margin: 0 0 28px;">+ $400–700 / month retainer</p>
+        <p style="font-size: 14px; color: #BA7517; font-weight: 600; margin: 0 0 28px;">+ $400–700 / month retainer</p>
         <div style="border-top: 1px solid #e0d8cc; padding-top: 24px; margin-bottom: 32px;">
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1B2D4F;">End-to-end department automation</span></div>
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1B2D4F;">Custom AI agents + advanced reporting</span></div>
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1B2D4F;">CRM, ERP and data integrations</span></div>
-          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1B2D4F;">Delivery in 4–8 weeks</span></div>
-          <div style="display: flex; gap: 10px;"><span style="color: #F0A020; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1B2D4F;">Dedicated support + SLA</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">End-to-end department automation</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">Custom AI agents + advanced reporting</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">CRM, ERP and data integrations</span></div>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">Delivery in 4–8 weeks</span></div>
+          <div style="display: flex; gap: 10px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">Dedicated support + SLA</span></div>
         </div>
-        <a href="https://calendly.com/vadym-flyntiq/30min" style="display: block; text-align: center; background: transparent; border: 2px solid #1B2D4F; color: #1B2D4F; padding: 14px 24px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none;" onmouseover="this.style.background='#1B2D4F';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#1B2D4F'">Get started →</a>
+        <a href="https://calendly.com/vadym-flyntiq/30min" style="display: block; text-align: center; background: transparent; border: 2px solid #1A1A1A; color: #1A1A1A; padding: 14px 24px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; font-family: 'Sora', sans-serif; transition: all 0.3s ease;" onmouseover="this.style.background='#1A1A1A';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#1A1A1A'">Get started →</a>
       </div>
 
     </div>
-    <p style="text-align: center; font-size: 14px; color: #5F5E5A; margin: 48px 0 0; line-height: 1.7;">Not sure which plan is right for you? <a href="https://calendly.com/vadym-flyntiq/30min" style="color: #F0A020; font-weight: 600; text-decoration: none;">Book a free audit</a> and we'll recommend the best fit — no obligation.</p>
+    <p style="text-align: center; font-size: 14px; color: #5F5E5A; margin: 48px 0 0; line-height: 1.7;">Not sure which plan is right for you? <a href="https://calendly.com/vadym-flyntiq/30min" style="color: #BA7517; font-weight: 600; text-decoration: none;">Book a free audit</a> and we'll recommend the best fit — no obligation.</p>
   </div>
 </section>
 
@@ -1209,11 +1210,14 @@
     <footer>
         <div class="container">
             <div class="footer-top">
-                <a href="#" class="logo-text">FLYNT<span>IQ</span></a>
+                <a href="#">
+                    <img src="flyntiq_logo.jpeg" alt="Flyntiq Logo" class="brand-logo" style="height: 40px;">
+                </a>
                 
                 <div class="footer-links">
                     <a href="#services">Services</a>
                     <a href="#how-it-works">How it works</a>
+                    <a href="#pricing">Pricing</a>
                     <a href="#case-studies">Case studies</a>
                     <a href="#who-we-help">Who we help</a>
                     <a href="#cta">Contact</a>
