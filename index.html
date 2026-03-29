@@ -1103,8 +1103,7 @@
           <span style="font-size: 42px; font-weight: 700; color: #1A1A1A; font-family: 'Sora', sans-serif;">$200</span>
           <span style="font-size: 16px; color: #5F5E5A;">– $500</span>
         </div>
-        <p style="font-size: 14px; color: #5F5E5A; margin: 0 0 4px;">One-time project fee</p>
-        <p style="font-size: 14px; color: #BA7517; font-weight: 600; margin: 0 0 28px;">+ $50–100 / month retainer</p>
+        <p style="font-size: 14px; color: #5F5E5A; margin: 0 0 28px;">One-time project fee</p>
         <div style="border-top: 1px solid #e0d8cc; padding-top: 24px; margin-bottom: 32px;">
           <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">1–2 automations built</span></div>
           <div style="display: flex; gap: 10px; margin-bottom: 14px;"><span style="color: #BA7517; flex-shrink: 0;">✦</span><span style="font-size: 15px; color: #1A1A1A;">Lead capture, CRM sync, or email flow</span></div>
@@ -1261,7 +1260,7 @@
             </div>
             
             <div class="cta-footer-text">
-                <a href="/cdn-cgi/l/email-protection#295f484d5044694f4550475d4058074a4644" style="transition: var(--transition);" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='rgba(26, 26, 26, 0.7)'"><span class="__cf_email__" data-cfemail="b4c2d5d0cdd9f4d2d8cddac0ddc59ad7dbd9">[email&#160;protected]</span></a> · 
+                <a href="mailto:vadym@flyntiq.com" style="transition: var(--transition);" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='rgba(26, 26, 26, 0.7)'">vadym@flyntiq.com</a> · 
                 <a href="tel:+380980085304" style="transition: var(--transition);" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='rgba(26, 26, 26, 0.7)'">+38 098 008 5304</a>
             </div>
         </div>
@@ -1299,7 +1298,7 @@
                 <div>
                     <h4 class="footer-heading">Contact Us</h4>
                     <div class="footer-contact">
-                        <a href="/cdn-cgi/l/email-protection#8dfbece9f4e0cdebe1f4e3f9e4fca3eee2e0"><span class="__cf_email__" data-cfemail="522433362b3f12343e2b3c263b237c313d3f">[email&#160;protected]</span></a>
+                        <a href="mailto:vadym@flyntiq.com">vadym@flyntiq.com</a>
                         <a href="tel:+380980085304">+380 98 008 5304</a>
                         <p style="margin: 0; line-height: 1.6;">
                             Ivana Franka Street, 144<br>
@@ -1346,7 +1345,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             
             // 1. Sticky Navigation & Scroll logic
@@ -1423,3 +1422,16 @@
                     }
                 });
             }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Trigger hero animation immediately
+            setTimeout(() => {
+                document.getElementById('hero').classList.add('visible');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
